@@ -1,0 +1,103 @@
+{
+  "name": "webpack-seed",
+  "version": "2.0.0",
+  "description": "webpack搭建多页面模板",
+  "private": true,
+  "scripts": {
+    "serve": "cross-env NODE_ENV=development webpack-dev-server --config build/dev.js --staging",
+    "build": "cross-env NODE_ENV=production webpack --config build/prod.js --prod",
+    "build:github": "cross-env NODE_ENV=production webpack --config build/prod.js --github",
+    "lint": "eslint -c .eslintrc.js 'src/**/*.js' 'build/**/*.js'",
+    "fix": "eslint --fix 'src/**/*.js' 'build/**/*.js'",
+    "prettier": "prettier --write 'src/**/*.js'",
+    "ci": "npm run lint && npm run prettier",
+    "new": "node ./bin/index.js"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ],
+    "*.{js,json,md,scss}": [
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BiYuqi/webpack-seed.git"
+  },
+  "author": "BiYuqi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BiYuqi/webpack-seed/issues"
+  },
+  "homepage": "https://github.com/BiYuqi/webpack-seed#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@babel/preset-env": "^7.12.11",
+    "autoprefixer": "^10.2.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "boxen": "^5.0.0",
+    "chalk": "^4.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "commander": "^6.2.1",
+    "copy-webpack-plugin": "^4.5.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.0.1",
+    "dotenv": "^8.2.0",
+    "dotenv-expand": "^5.1.0",
+    "ejs-loader": "^0.3.5",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "file-loader": "^2.0.0",
+    "glob": "^7.1.6",
+    "handlebars": "^4.7.6",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.3.7",
+    "inquirer": "^7.3.3",
+    "lint-staged": "^10.0.8",
+    "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "portfinder": "^1.0.28",
+    "postcss": "^8.2.4",
+    "postcss-loader": "^4.1.0",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.32.4",
+    "sass-loader": "^10.1.0",
+    "script-ext-html-webpack-plugin": "^2.1.4",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "4.x",
+    "url-loader": "^1.1.1",
+    "webpack": "^4.46.0",
+    "webpack-auto-find-port": "0.0.5",
+    "webpack-bundle-analyzer": "^3.6.1",
+    "webpack-chain": "^6.5.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "core-js": "^3.8.3"
+  },
+  "browserslist": [
+    "> 1%",
+    "Firefox ESR",
+    "last 2 versions",
+    "ie >= 9"
+  ]
+}

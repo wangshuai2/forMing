@@ -1,0 +1,8 @@
+import content from './{{fileName}}.ejs'
+import { Layout } from '../../layout'
+import { {{renderMode}} } from '../../constants/template'
+
+export default new Layout({
+  pageTitle: '{{pageTitle}}',
+  renderMode: {{renderMode}}
+}).render(content())

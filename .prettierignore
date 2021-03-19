@@ -1,0 +1,12 @@
+src/common/vendor
+dist
+build
+node_modules
+
+package.json
+package-lock.json
+
+.prettierignore
+.prettierrc.js
+.eslintrc.js
+.eslintignore
